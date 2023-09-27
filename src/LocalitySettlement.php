@@ -31,7 +31,7 @@ class LocalitySettlement
     public function addPostalCode(string $postalCode): void
     {
         if (!is_numeric($postalCode) || strlen($postalCode) !== 4) {
-            throw new LogicException('Postal code invalid foramt: ' . $postalCode);
+            throw new LogicException('Postal code invalid format: ' . $postalCode);
         }
 
         if (in_array($postalCode, $this->postalCodes, true)) {
