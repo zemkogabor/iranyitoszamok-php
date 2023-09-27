@@ -6,6 +6,9 @@ namespace Irsz;
 
 use LogicException;
 
+/**
+ * A települést reprezentálja, minden példány 1-1 település, aminek több irányítószáma is lehet.
+ */
 class LocalitySettlement
 {
     /**

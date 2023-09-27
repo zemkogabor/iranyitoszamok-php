@@ -9,6 +9,9 @@ use OpenSpout\Common\Exception\IOException;
 use OpenSpout\Reader\Exception\ReaderNotOpenedException;
 use OpenSpout\Reader\XLSX\Reader;
 
+/**
+ * "Helység" osztály, ezen az osztályon keresztül tudjuk elérni az összes települést (Locality::settlements())
+ */
 class Locality
 {
     public const SOURCE_KSH_HNT = 'https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2022.xlsx';
