@@ -15,6 +15,9 @@ use OpenSpout\Reader\XLSX\Reader;
 class Locality
 {
     public const SOURCE_KSH_HNT = 'https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2022.xlsx';
+    /**
+     * Nincs verziózva ez az excel! Ha változik a struktúra, akkor eltörhet a script.
+     */
     public const SOURCE_MAGYAR_POSTA_IRSZ = 'https://www.posta.hu/static/internet/download/Iranyitoszam-Internet_uj.xlsx';
 
     /**
@@ -90,7 +93,7 @@ class Locality
     }
 
     /**
-     * Kitölti a településekhez tartozó irányítószámokat a Magyar Posta adatbázisa alapján.
+     * Kitölti a településekhez tartozó irányítószámokat a "Magyar Posta" adatbázisa alapján.
      *
      * @return void
      * @throws IOException
@@ -203,7 +206,7 @@ class Locality
     }
 
     /**
-     * Római számot átalakítja integerré (lehetne rá lib, de annyira egyszerű, hogy végül inkább megírtam)
+     * Római számot átalakítja integerré (lehetne rá lib, de az egyszerűség miatt itt lett megírva)
      *
      * @param string $romanNumeral
      * @return int
