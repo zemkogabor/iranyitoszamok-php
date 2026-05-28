@@ -14,7 +14,7 @@ use OpenSpout\Reader\XLSX\Reader;
  */
 class Locality
 {
-    public const SOURCE_KSH_HNT = 'https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2022.xlsx';
+    public const SOURCE_KSH_HNT = 'https://www.ksh.hu/docs/helysegnevtar/hnt_letoltes_2025.xlsx';
     /**
      * Nincs verziózva ez az excel! Ha változik a struktúra, akkor eltörhet a script.
      */
