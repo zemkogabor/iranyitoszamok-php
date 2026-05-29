@@ -51,7 +51,7 @@ class Locality
         $reader->open($file);
 
         foreach ($reader->getSheetIterator() as $sheet) {
-            if ($sheet->getName() !== 'Helységek 2022.01.01.') {
+            if ($sheet->getName() !== 'Helységek 2025.01.01.') {
                 continue;
             }
 
