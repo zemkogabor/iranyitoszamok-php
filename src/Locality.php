@@ -61,7 +61,7 @@ class Locality
                     continue;
                 }
 
-                $cells = $row->getCells();
+                $cells = $row->cells;
 
                 if ($cells[0]->getValue() === 'Összesen') {
                     // Utolsó "összesítő" sor kihagyása
@@ -117,7 +117,7 @@ class Locality
                             continue;
                         }
 
-                        $cells = $row->getCells();
+                        $cells = $row->cells;
                         $postalCode = (string) $cells[0]->getValue();
                         $settlementName = trim($cells[1]->getValue());
 
@@ -133,7 +133,7 @@ class Locality
                             continue;
                         }
 
-                        $cells = $row->getCells();
+                        $cells = $row->cells;
 
                         $postalCode = (string) $cells[0]->getValue();
                         $districtInRomanNumeral = $cells[8]->getValue();
@@ -169,7 +169,7 @@ class Locality
                             continue;
                         }
 
-                        $cells = $row->getCells();
+                        $cells = $row->cells;
 
                         $postalCode = (string) $cells[0]->getValue();
 
