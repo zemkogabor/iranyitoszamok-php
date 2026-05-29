@@ -121,7 +121,9 @@ class Locality
                         $postalCode = (string) $cells[0]->getValue();
                         $settlementName = trim($cells[1]->getValue());
 
-                        static::validateSettlementNameExists($settlementName);
+                        if (!static::validateSettlementNameExists($settlementName)) {
+                            continue;
+                        }
 
                         self::$settlementsByName[$settlementName]->addPostalCode($postalCode);
                     }
@@ -153,7 +155,9 @@ class Locality
                             $settlementName = 'Budapest ' . $districtNumberFormatted  . '. ker.';
                         }
 
-                        static::validateSettlementNameExists($settlementName);
+                        if (!static::validateSettlementNameExists($settlementName)) {
+                            continue;
+                        }
 
                         self::$settlementsByName[$settlementName]->addPostalCode($postalCode);
                     }
@@ -178,7 +182,9 @@ class Locality
                         // Pl.: "Szeged u." -> "Szeged"
                         $settlementName = rtrim($sheet->getName(), ' u.');
 
-                        static::validateSettlementNameExists($settlementName);
+                        if (!static::validateSettlementNameExists($settlementName)) {
+                            continue;
+                        }
 
                         self::$settlementsByName[$settlementName]->addPostalCode($postalCode);
                     }
@@ -243,12 +249,10 @@ class Locality
      * Validálja, hogy létezik-e a településnév
      *
      * @param string $settlementName
-     * @return void
+     * @return bool
      */
-    protected static function validateSettlementNameExists(string $settlementName): void
+    protected static function validateSettlementNameExists(string $settlementName): bool
     {
-        if (!array_key_exists($settlementName, self::$settlementsByName)) {
-            throw new LogicException('Settlement not found: ' . $settlementName);
-        }
+        return array_key_exists($settlementName, self::$settlementsByName);
     }
 }
